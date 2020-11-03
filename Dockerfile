@@ -1,4 +1,10 @@
 FROM python:3.8-slim
 
-RUN ./docker-compose up -d
+WORKDIR /app
 
+COPY ./docker-compose.yml /app/docker-compose.yml
+
+RUN pip install docker-compose
+
+
+RUN docker-compose up -d
