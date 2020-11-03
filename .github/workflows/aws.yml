@@ -55,6 +55,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: homepage-app
+        Hich: homepage-service
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
