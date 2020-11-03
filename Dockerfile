@@ -1,8 +1,6 @@
 FROM python:3.8-slim
 
-WORKDIR /app
-
-COPY ./docker-compose.yml /app/docker-compose.yml
+ADD ./* $HOME/src/
 
 RUN pip install docker-compose
 
