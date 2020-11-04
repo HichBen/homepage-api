@@ -1,9 +1,14 @@
 FROM python:3.8-slim
 
-WORKDIR /homepage_api
+WORKDIR /app
 
-RUN pip install docker
+COPY ./requirements.txt /app/requirements.txt
 
-RUN pip install docker-compose
+RUN apt-get update \
+    && apt-get install gcc -y \
+    && apt-get clean
 
-cmd docker-compose up -d
+RUN pip install -r /app/requirements.txt \
+    && rm -rf /root/.cache/pip
+
+COPY . /app/
