@@ -54,7 +54,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: homepage-app
+        ECR_REPOSITORY: homepage-api
         Hich: homepage-service
         IMAGE_TAG: ${{ github.sha }}
       run: |
@@ -77,6 +77,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: PythonService
-        cluster: PythonCluster
+        service: HomepageService
+        cluster: HomepageCluster
         wait-for-service-stability: true

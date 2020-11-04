@@ -25,11 +25,11 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": null,
+      "memory": 500,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "733271277358.dkr.ecr.us-east-2.amazonaws.com/homepage-app",
+      "image": "733271277358.dkr.ecr.us-east-2.amazonaws.com/homepage-api",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -50,12 +50,12 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "128",
+  "memory": "500",
   "taskRoleArn": null,
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:733271277358:task-definition/DeploymentContainer:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:733271277358:task-definition/DeploymentContainer:9",
   "family": "DeploymentContainer",
   "requiresAttributes": [
     {
@@ -71,7 +71,7 @@
   ],
   "networkMode": null,
   "cpu": "1024",
-  "revision": 1,
+  "revision": 9,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
