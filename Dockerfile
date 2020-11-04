@@ -6,6 +6,4 @@ RUN pip install docker
 
 RUN pip install docker-compose
 
-RUN docker start
-
 cmd docker-compose up -d
