@@ -2,9 +2,8 @@ version: '3.7'
 
 services:
   homepage_service:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    build: ./homepage-service
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
     volumes:
       - ./homepage-service/:/app/
     ports:
@@ -13,7 +12,6 @@ services:
       - DATABASE_URI=postgresql://Hichem:Hich@homepage_db/homepage_db_dev
     depends_on:
       - homepage_db
-    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
   homepage_db:
     image: postgres:12.1-alpine
